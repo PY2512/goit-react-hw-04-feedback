@@ -29,23 +29,25 @@ class App extends Component {
 
   render() {
     const {good, neutral, bad} = this.state;
-    const {countTotalFeedback, countPositiveFeedbackPercentage, handleIncrement} = this;
+    const {countTotalFeedback,  handleIncrement} = this;
     return (
       <>
         <SectionTitle />
         <Buttons handleIncrement={handleIncrement}/>
         {countTotalFeedback() === 0 ? (<Notification message="No feedback given" />) : 
         <Statistics
-          countTotalFeedback={countTotalFeedback}
-          countPositiveFeedbackPercentage={countPositiveFeedbackPercentage}
-          good={good}
-          neutral={neutral}
-          bad={bad}
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
         />}
       </>
       
     );
   }
 }
+
+
 
 export default App;
