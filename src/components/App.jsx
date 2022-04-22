@@ -27,7 +27,6 @@ const countPositiveFeedbackPercentage = () => {
 
 return (
   <>
-    <h1>react-hooks</h1>
     <SectionTitle />
     <Buttons handleIncrement={handleIncrement}/>
     {countTotalFeedback() === 0 ? (<Notification message="No feedback given" />) : 
